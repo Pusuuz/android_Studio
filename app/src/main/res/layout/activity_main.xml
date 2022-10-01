@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/almostBlack"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="466dp"
+        android:layout_weight="2"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="152dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="196dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.504" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        style="@style/BottonRow"
+        android:layout_height="300dp">
+        <Button
+            style="@style/ButtonNumber"
+            android:textColor="@color/red"
+            android:onClick="allClearAction"
+            android:text="AC" />
+
+
+        <ImageButton
+            style="@style/ButtonNumber"
+            android:onClick="backSpaceAction"
+            android:src="@drawable/clear"
+            android:scaleType="centerInside"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:tint="@color/orange"
+            />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="%" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:textColor="@color/orange"
+            android:text="/" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/BottonRow"
+        android:layout_height="300dp">
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="7" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="8" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="9" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:textColor="@color/orange"
+            android:text="x" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/BottonRow"
+        android:layout_height="300dp">
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="4" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="5" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="6" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:textColor="@color/orange"
+            android:text="-" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/BottonRow"
+        android:layout_height="300dp">
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="1" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="2" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="3" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:textColor="@color/orange"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/BottonRow"
+        android:layout_height="300dp">
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="." />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:text="0" />
+
+        <Button
+            style="@style/ButtonNumber"
+            android:layout_weight="2"
+            android:background="@color/orange"
+            android:textSize="40sp"
+            android:onClick="equalAction"
+            android:text="=" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

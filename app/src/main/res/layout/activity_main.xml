@@ -16,6 +16,7 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/display"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"

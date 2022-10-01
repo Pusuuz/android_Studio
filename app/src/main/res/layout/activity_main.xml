@@ -16,12 +16,15 @@
         android:padding="20dp">
 
         <TextView
-            android:layout_width="152dp"
-            android:layout_height="64dp"
-            android:layout_marginEnd="196dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            android:text="0"
+            android:textSize="33sp"
+            android:gravity="end|bottom"
+
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.504" />
@@ -34,6 +37,7 @@
         style="@style/BottonRow"
         android:layout_height="300dp">
         <Button
+            android:id="@+id/Buttonclearall"
             style="@style/ButtonNumber"
             android:textColor="@color/red"
             android:onClick="allClearAction"
@@ -41,6 +45,7 @@
 
 
         <ImageButton
+            android:id="@+id/Buttonclear"
             style="@style/ButtonNumber"
             android:onClick="backSpaceAction"
             android:src="@drawable/clear"
@@ -51,10 +56,12 @@
             />
 
         <Button
+            android:id="@+id/Buttonpersent"
             style="@style/ButtonNumber"
             android:text="%" />
 
         <Button
+            android:id="@+id/Buttondiv"
             style="@style/ButtonNumber"
             android:textColor="@color/orange"
             android:text="/" />
@@ -66,18 +73,22 @@
         android:layout_height="300dp">
 
         <Button
+            android:id="@+id/Button7"
             style="@style/ButtonNumber"
             android:text="7" />
 
         <Button
+            android:id="@+id/Button8"
             style="@style/ButtonNumber"
             android:text="8" />
 
         <Button
+            android:id="@+id/Button9"
             style="@style/ButtonNumber"
             android:text="9" />
 
         <Button
+            android:id="@+id/Buttonx"
             style="@style/ButtonNumber"
             android:textColor="@color/orange"
             android:text="x" />
@@ -86,22 +97,27 @@
     </LinearLayout>
 
     <LinearLayout
+
         style="@style/BottonRow"
         android:layout_height="300dp">
 
         <Button
+            android:id="@+id/Button4"
             style="@style/ButtonNumber"
             android:text="4" />
 
         <Button
+            android:id="@+id/Button5"
             style="@style/ButtonNumber"
             android:text="5" />
 
         <Button
+            android:id="@+id/Button6"
             style="@style/ButtonNumber"
             android:text="6" />
 
         <Button
+            android:id="@+id/Buttonmines"
             style="@style/ButtonNumber"
             android:textColor="@color/orange"
             android:text="-" />
@@ -113,18 +129,22 @@
         android:layout_height="300dp">
 
         <Button
+            android:id="@+id/Button1"
             style="@style/ButtonNumber"
             android:text="1" />
 
         <Button
+            android:id="@+id/Button2"
             style="@style/ButtonNumber"
             android:text="2" />
 
         <Button
+            android:id="@+id/Button3"
             style="@style/ButtonNumber"
             android:text="3" />
 
         <Button
+            android:id="@+id/Buttonplus"
             style="@style/ButtonNumber"
             android:textColor="@color/orange"
             android:text="+" />
@@ -136,14 +156,17 @@
         android:layout_height="300dp">
 
         <Button
+            android:id="@+id/Buttonpoint"
             style="@style/ButtonNumber"
             android:text="." />
 
         <Button
+            android:id="@+id/Button0"
             style="@style/ButtonNumber"
             android:text="0" />
 
         <Button
+            android:id="@+id/btnEqual"
             style="@style/ButtonNumber"
             android:layout_weight="2"
             android:background="@color/orange"

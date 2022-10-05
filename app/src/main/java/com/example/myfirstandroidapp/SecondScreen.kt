@@ -13,6 +13,7 @@ class SecondScreen : AppCompatActivity() {
         setContentView(R.layout.activity_second_screen)
         val button = findViewById<Button>(R.id.secondBotton)
 
+
         button.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP

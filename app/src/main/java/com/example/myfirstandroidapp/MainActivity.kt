@@ -9,18 +9,18 @@ import com.example.myfirstandroidapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var binding: ActivityMainBinding
-    private val nothing = 0
-    private val multiply = 5
-    private val plus = 1
-    private val minus = 2
-    private val div = 3
-    private val percent = 4
+     lateinit var binding: ActivityMainBinding
+     val nothing = 0
+     val multiply = 5
+     val plus = 1
+     val minus = 2
+     val div = 3
+     val percent = 4
 
 
-    var mode = nothing
+     var mode = nothing
     val resultCalculator = 0
-    var secondNumber = ""
+     private var secondNumber = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
+        binding.Buttonx.setOnClickListener {
+            mode = multiply
+        }
 
         binding.Button0.setOnClickListener {
 
@@ -41,21 +45,48 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnEqual.setOnClickListener {
-            when(mode){
-                multiply-> {
-                    val firstNumber = binding.display.text.toString().toLong()
-                    val secondNumber = secondNumber.toLong()
 
-                    binding.display.text = (firstNumber * secondNumber).toString()
 
+
+            if (secondNumber.isNotEmpty()){
+                val firstNumber = binding.display.text.toString().toDouble()
+                val secondNumber = secondNumber.toLong()
+                when(mode){
+                    multiply-> {
+
+                        binding.display.text = (firstNumber * secondNumber).toString()
+                    }
+                    minus ->{
+                        binding.display.text = (firstNumber - secondNumber).toString()
+
+                    }
+
+                    plus->{
+                        binding.display.text = (firstNumber + secondNumber).toString()
+
+                    }
+                    div->{
+
+                        binding.display.text = (firstNumber / secondNumber).toString()
+
+                    }
+                    percent->{
+
+                        binding.display.text = (firstNumber % secondNumber).toString()
+
+                    }
                 }
+
             }
+
+
         }
 
         binding.Button1.setOnClickListener {
 
 
             when (mode) {
+
                 nothing -> {
                     if (binding.display.text != "0")
 
@@ -65,19 +96,214 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 }
+
                 else -> secondNumber = secondNumber.plus(1)
 
-
-
-            }
-            binding.Buttonx.setOnClickListener {
-                mode = multiply
             }
 
 
-            fun allClearAction() {}
-            fun backSpaceAction() {}
-            fun equalAction() {}
         }
+
+        binding.Button2.setOnClickListener {
+
+
+            when (mode) {
+
+                nothing -> {
+                    if (binding.display.text != "0")
+
+                        binding.display.append("2")
+                    else {
+                        binding.display.text = "2"
+                    }
+
+                }
+
+                else -> secondNumber = secondNumber.plus(2)
+
+            }
+
+
+        }
+
+        binding.Button3.setOnClickListener {
+
+
+            when (mode) {
+
+                nothing -> {
+                    if (binding.display.text != "0")
+
+                        binding.display.append("3")
+                    else {
+                        binding.display.text = "3"
+                    }
+
+                }
+
+                else -> secondNumber = secondNumber.plus(3)
+
+            }
+
+
+        }
+
+        binding.Button4.setOnClickListener {
+
+
+            when (mode) {
+
+                nothing -> {
+                    if (binding.display.text != "0")
+
+                        binding.display.append("4")
+                    else {
+                        binding.display.text = "4"
+                    }
+
+                }
+
+                else -> secondNumber = secondNumber.plus(4)
+
+            }
+
+
+        }
+
+        binding.Button5.setOnClickListener {
+
+
+            when (mode) {
+
+                nothing -> {
+                    if (binding.display.text != "0")
+
+                        binding.display.append("5")
+                    else {
+                        binding.display.text = "5"
+                    }
+
+                }
+
+                else -> secondNumber = secondNumber.plus(5)
+
+            }
+
+
+        }
+
+        binding.Button6.setOnClickListener {
+
+
+            when (mode) {
+
+                nothing -> {
+                    if (binding.display.text != "0")
+
+                        binding.display.append("6")
+                    else {
+                        binding.display.text = "6"
+                    }
+
+                }
+
+                else -> secondNumber = secondNumber.plus(6)
+
+            }
+
+
+        }
+
+        binding.Button7.setOnClickListener {
+
+
+            when (mode) {
+
+                nothing -> {
+                    if (binding.display.text != "0")
+
+                        binding.display.append("7")
+                    else {
+                        binding.display.text = "7"
+                    }
+
+                }
+
+                else -> secondNumber = secondNumber.plus(7)
+
+            }
+
+
+        }
+
+        binding.Button8.setOnClickListener {
+
+
+            when (mode) {
+
+                nothing -> {
+                    if (binding.display.text != "0")
+
+                        binding.display.append("8")
+                    else {
+                        binding.display.text = "8"
+                    }
+
+                }
+
+                else -> secondNumber = secondNumber.plus(8)
+
+            }
+
+
+        }
+
+        binding.Button9.setOnClickListener {
+
+
+            when (mode) {
+
+                nothing -> {
+                    if (binding.display.text != "0")
+
+                        binding.display.append("9")
+                    else {
+                        binding.display.text = "9"
+                    }
+
+                }
+
+                else -> secondNumber = secondNumber.plus(9)
+
+            }
+
+
+        }
+
+        binding.Buttonpoint.setOnClickListener {
+
+
+            if (!binding.display.text.toString().contains(".")){
+
+                binding.display.append(".")
+            }
+
+        }
+
+        binding.Buttonclearall.setOnClickListener {
+            binding.display.text = "0"
+            mode = nothing
+            secondNumber = ""
+        }
+
+        binding.Buttonpersent.setOnClickListener {
+            mode = percent
+        }
+
+
+
+
+
+
     }
 }

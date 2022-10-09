@@ -299,6 +299,15 @@ class MainActivity : AppCompatActivity() {
         binding.Buttonpersent.setOnClickListener {
             mode = percent
         }
+        binding.Buttonmines.setOnClickListener {
+            mode = minus
+        }
+        binding.Buttonplus.setOnClickListener {
+            mode = plus
+        }
+        binding.Buttondiv.setOnClickListener {
+            mode = div
+        }
 
 
 

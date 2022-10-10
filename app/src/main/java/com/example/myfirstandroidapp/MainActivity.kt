@@ -1,7 +1,6 @@
 package com.example.myfirstandroidapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myfirstandroidapp.databinding.ActivityMainBinding
 
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
      var mode = nothing
     val resultCalculator = 0
-     private var secondNumber = ""
+     private var inMint = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,10 +31,13 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.Buttonx.setOnClickListener {
+            if (mode!=nothing && inMint.isNotEmpty()) equalize()
             mode = multiply
         }
 
         binding.Button0.setOnClickListener {
+            if (binding.display.text.toString().substringAfter(".").filter { "0" })
+
 
             if (binding.display.text != "0")
 
@@ -49,36 +51,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            if (secondNumber.isNotEmpty()){
-                val firstNumber = binding.display.text.toString().toDouble()
-                val secondNumber = secondNumber.toLong()
-                when(mode){
-                    multiply-> {
+            if (inMint.isNotEmpty()) equalize()
 
-                        binding.display.text = (firstNumber * secondNumber).toString()
-                    }
-                    minus ->{
-                        binding.display.text = (firstNumber - secondNumber).toString()
-
-                    }
-
-                    plus->{
-                        binding.display.text = (firstNumber + secondNumber).toString()
-
-                    }
-                    div->{
-
-                        binding.display.text = (firstNumber / secondNumber).toString()
-
-                    }
-                    percent->{
-
-                        binding.display.text = (firstNumber % secondNumber).toString()
-
-                    }
-                }
-
-            }
 
 
         }
@@ -98,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                else -> secondNumber = secondNumber.plus(1)
+                else -> inMint = inMint.plus(1)
 
             }
 
@@ -120,7 +94,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                else -> secondNumber = secondNumber.plus(2)
+                else -> inMint = inMint.plus(2)
 
             }
 
@@ -142,7 +116,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                else -> secondNumber = secondNumber.plus(3)
+                else -> inMint = inMint.plus(3)
 
             }
 
@@ -164,7 +138,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                else -> secondNumber = secondNumber.plus(4)
+                else -> inMint = inMint.plus(4)
 
             }
 
@@ -186,7 +160,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                else -> secondNumber = secondNumber.plus(5)
+                else -> inMint = inMint.plus(5)
 
             }
 
@@ -208,7 +182,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                else -> secondNumber = secondNumber.plus(6)
+                else -> inMint = inMint.plus(6)
 
             }
 
@@ -230,7 +204,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                else -> secondNumber = secondNumber.plus(7)
+                else -> inMint = inMint.plus(7)
 
             }
 
@@ -252,7 +226,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                else -> secondNumber = secondNumber.plus(8)
+                else -> inMint = inMint.plus(8)
 
             }
 
@@ -276,7 +250,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                else -> secondNumber = secondNumber.plus(9)
+                else -> inMint = inMint.plus(9)
 
             }
 
@@ -296,19 +270,25 @@ class MainActivity : AppCompatActivity() {
         binding.Buttonclearall.setOnClickListener {
             binding.display.text = "0"
             mode = nothing
-            secondNumber = ""
+            inMint = ""
         }
 
         binding.Buttonpersent.setOnClickListener {
+            if (mode!=nothing && inMint.isNotEmpty()) equalize()
             mode = percent
         }
         binding.Buttonmines.setOnClickListener {
+            if (mode!=nothing && inMint.isNotEmpty()) equalize()
+
             mode = minus
+
         }
         binding.Buttonplus.setOnClickListener {
+            if (mode!=nothing && inMint.isNotEmpty()) equalize()
             mode = plus
         }
         binding.Buttondiv.setOnClickListener {
+            if (mode!=nothing && inMint.isNotEmpty()) equalize()
             mode = div
         }
         binding.Buttonclear.setOnClickListener {
@@ -319,6 +299,38 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+    }
+    fun equalize(){
+        val firstNumber = binding.display.text.toString().toDouble()
+        val secondNumber = inMint.toLong()
+        when(mode){
+            multiply-> {
+
+                binding.display.text = (firstNumber * secondNumber).toString()
+            }
+            minus ->{
+                binding.display.text = (firstNumber - secondNumber).toString()
+
+            }
+
+            plus->{
+                binding.display.text = (firstNumber + secondNumber).toString()
+
+            }
+            div->{
+
+                binding.display.text = (firstNumber / secondNumber).toString()
+
+            }
+            percent->{
+
+                binding.display.text = (firstNumber % secondNumber).toString()
+
+            }
+        }
+
+        inMint=""
 
     }
 }

@@ -48,7 +48,6 @@
         <ImageButton
             android:id="@+id/Buttonclear"
             style="@style/ButtonNumber"
-            android:onClick="backSpaceAction"
             android:src="@drawable/clear"
             android:scaleType="centerInside"
             android:scaleX="0.5"

@@ -1,6 +1,7 @@
 package com.example.myfirstandroidapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myfirstandroidapp.databinding.ActivityMainBinding
 
@@ -36,11 +37,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.Button0.setOnClickListener {
 
-            if (binding.display.text.length != 1)
+            if (binding.display.text != "0")
 
-                binding.display.append("1")
+                binding.display.append("0")
             else {
-                binding.display.text = "1"
+                binding.display.text = "0"
             }
         }
 
@@ -88,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             when (mode) {
 
                 nothing -> {
-                    if (binding.display.text != "0")
+                    if (binding.display.text.toString()  != "0")
 
                         binding.display.append("1")
                     else {
@@ -110,7 +111,7 @@ class MainActivity : AppCompatActivity() {
             when (mode) {
 
                 nothing -> {
-                    if (binding.display.text != "0")
+                    if (binding.display.text.toString()  != "0")
 
                         binding.display.append("2")
                     else {
@@ -132,7 +133,7 @@ class MainActivity : AppCompatActivity() {
             when (mode) {
 
                 nothing -> {
-                    if (binding.display.text != "0")
+                    if (binding.display.text.toString()  != "0")
 
                         binding.display.append("3")
                     else {
@@ -154,7 +155,7 @@ class MainActivity : AppCompatActivity() {
             when (mode) {
 
                 nothing -> {
-                    if (binding.display.text != "0")
+                    if (binding.display.text.toString()  != "0")
 
                         binding.display.append("4")
                     else {
@@ -176,7 +177,7 @@ class MainActivity : AppCompatActivity() {
             when (mode) {
 
                 nothing -> {
-                    if (binding.display.text != "0")
+                    if (binding.display.text.toString()  != "0")
 
                         binding.display.append("5")
                     else {
@@ -198,7 +199,7 @@ class MainActivity : AppCompatActivity() {
             when (mode) {
 
                 nothing -> {
-                    if (binding.display.text != "0")
+                    if (binding.display.text.toString()  != "0")
 
                         binding.display.append("6")
                     else {
@@ -220,7 +221,7 @@ class MainActivity : AppCompatActivity() {
             when (mode) {
 
                 nothing -> {
-                    if (binding.display.text != "0")
+                    if (binding.display.text.toString()  != "0")
 
                         binding.display.append("7")
                     else {
@@ -242,7 +243,7 @@ class MainActivity : AppCompatActivity() {
             when (mode) {
 
                 nothing -> {
-                    if (binding.display.text != "0")
+                    if (binding.display.text.toString() != "0")
 
                         binding.display.append("8")
                     else {
@@ -264,7 +265,9 @@ class MainActivity : AppCompatActivity() {
             when (mode) {
 
                 nothing -> {
-                    if (binding.display.text != "0")
+
+
+                    if (binding.display.text.toString() != "0")
 
                         binding.display.append("9")
                     else {
@@ -307,6 +310,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.Buttondiv.setOnClickListener {
             mode = div
+        }
+        binding.Buttonclear.setOnClickListener {
+            binding.display.text=binding.display.text.toString().dropLast(1)
         }
 
 

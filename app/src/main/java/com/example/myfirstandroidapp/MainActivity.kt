@@ -37,10 +37,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.Button0.setOnClickListener {
 
-             val filteredString=binding.display.text.toString().substringAfter(".").map { "0" }
+             val filteredString=binding.display.text.toString().substringAfter(".").filter { it == '0' }
             val subString=binding.display.text.toString().substringAfter(".")
 
-            if (filteredString.size==subString.length){
+            if (filteredString.length==subString.length){
                 if (binding.display.text != "0")
 
                     binding.display.append("0")

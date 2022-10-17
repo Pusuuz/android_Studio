@@ -36,15 +36,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.Button0.setOnClickListener {
-            if (binding.display.text.toString().substringAfter(".").filter { "0" })
 
+             val filteredString=binding.display.text.toString().substringAfter(".").map { "0" }
+            val subString=binding.display.text.toString().substringAfter(".")
 
-            if (binding.display.text != "0")
+            if (filteredString.size==subString.length){
+                if (binding.display.text != "0")
 
-                binding.display.append("0")
-            else {
-                binding.display.text = "0"
+                    binding.display.append("0")
+                else {
+                    binding.display.text = "0"
+                }
             }
+
+
+
         }
 
         binding.btnEqual.setOnClickListener {
